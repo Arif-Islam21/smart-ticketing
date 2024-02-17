@@ -173,7 +173,7 @@
     <main class="my-8 bg-gray-100 rounded-t-3xl">
       <!-- TICKET COUNTER SECTION STARTS FROM HERE -->
 
-      <section class="space-y-6 container mx-auto">
+      <section class="space-y-6 gap-12 container mx-auto">
         <!-- AR PARIBAHAN SECTION -->
         <div class="w-3/4 mx-auto py-12 text-center">
           <h1 class="text-3xl font-bold">AR Paribahan</h1>
@@ -184,13 +184,13 @@
         </div>
         <!-- GREENLINE PARIBAHAN SECTION WITH TWO DIV AND DETAIL -->
         <section class="pb-12">
-          <div class="card p-2 card-side bg-base-100">
+          <div class="card p-2 flex flex-col lg:flex-row card-side bg-base-100">
             <div
-              class="card-body p-12 relative w-2/3 border-r-2 border-dashed border-green-600"
+              class="card-body p-12 relative lg:w-2/3 border-r-2 border-dashed border-green-600"
             >
               <!-- PARIBAHAN TITLE HERE -->
               <section>
-                <div class="navbar">
+                <div class="navbar flex flex-col lg:flex-row">
                   <div class="flex-1 gap-2">
                     <img src="images/bus-logo.png" alt="" />
                     <div class="">
@@ -218,7 +218,7 @@
                   <h5>Departure Time</h5>
                   <h5>9.00 PM</h5>
                 </div>
-                <div class="flex justify-around py-2">
+                <div class="flex flex-col lg:flex-row justify-around py-2">
                   <button class="bg-gray-400 p-3 rounded-xl font-medium mt-4">
                     Bording Point -Laxmipur
                   </button>
@@ -239,7 +239,8 @@
                 class="h-12 w-12 absolute bottom-[-32px] right-[-24px] rounded-full bg-gray-100"
               ></div>
             </div>
-            <div class="w-1/4 p-6 flex justify-center items-center">
+            <!-- ticket value section -->
+            <div class="lg:w-1/4 p-6 flex justify-center items-center">
               <div class="flex items-center flex-col justify-center">
                 <img src="images/fare.png" alt="this is the fare of ticket" />
                 <h4 class="text-2xl font-bold"><span>550</span> Taka</h4>
