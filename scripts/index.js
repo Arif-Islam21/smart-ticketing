@@ -45,17 +45,26 @@ for (const key of keyboard) {
     document
       .getElementById("apply-coupon-code")
       .addEventListener("click", function () {
-        const couponText = document
+        const couponText15 = document
           .getElementById("coupon-section")
           .value.split(" ")
           .join("")
           .toLowerCase();
-        // const coupon = couponText.
-        if (selectedSeatCount === 4 && couponText === "new15") {
+        // const coupon = couponText15.
+        const couponText20 = document
+          .getElementById("coupon-section")
+          .value.split(" ")
+          .join("")
+          .toLowerCase();
+        if (selectedSeatCount === 4 && couponText15 === "new15") {
           const discount = totalPriceValue * 0.15;
           grandTotalPrice.innerText = totalPriceValue - discount;
-          console.log("I have 4 object", couponText);
-        }else if(selectedSeatCount === 4 && couponText === "")
+          console.log("I have 4 object", couponText15);
+        } else if (selectedSeatCount === 4 && couponText20 === "couple20") {
+          const discount = totalPriceValue * 0.2;
+          grandTotalPrice.innerText = totalPriceValue - discount;
+          console.log("Hi I am a couple hehehe");
+        }
       });
     //
     // if (selectedSeatCount === 4) {
