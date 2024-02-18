@@ -1,10 +1,6 @@
 const selectedSeat = document.getElementById("selected-seat");
 const seatLeft = document.getElementById("seats-left");
-const selectedSeatinfo = document.getElementById("selected-seat-info");
-const tableRow = document.createElement("tr");
-const tableData = document.createElement("td");
-const tableType = document.createElement("td");
-const tablePrice = document.createElement("td");
+let totalPriceElement = document.getElementById("total-price");
 let tableListCount = 0;
 // console.log(seatName, seatType, seatPrice);
 let seatLeftCount = 40;
@@ -24,14 +20,19 @@ for (const key of keyboard) {
     selectedSeat.innerText = selectedSeatCount;
     seatLeft.innerText = seatLeftCount;
     // WORKING WITH SEAT DETAIL
+    const tableData = document.createElement("td");
     tableData.innerText = key.innerText;
+    const tableType = document.createElement("td");
     tableType.innerText = "Economy";
+    const tablePrice = document.createElement("td");
     tablePrice.innerText = 550;
+    const tableRow = document.createElement("tr");
     tableRow.appendChild(tableData);
     tableRow.appendChild(tableType);
     tableRow.appendChild(tablePrice);
+    const selectedSeatinfo = document.getElementById("selected-seat-info");
     selectedSeatinfo.appendChild(tableRow);
-    tableListCount++;
+    // tableListCount++;
   });
 }
 // console.log(kbd[0].innerText);
