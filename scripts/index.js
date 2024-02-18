@@ -51,7 +51,6 @@ for (const key of keyboard) {
           .value.split(" ")
           .join("")
           .toLowerCase();
-        // const coupon = couponText15.
         const couponText20 = document
           .getElementById("coupon-section")
           .value.split(" ")
@@ -72,10 +71,6 @@ for (const key of keyboard) {
         } else {
         }
       });
-    //
-    // if (selectedSeatCount === 4) {
-    //   console.log("seat count 4");
-    // }
   });
 }
 // console.log(selectedSeatCount);
