@@ -5,9 +5,6 @@ const tableRow = document.createElement("tr");
 const tableData = document.createElement("td");
 const tableType = document.createElement("td");
 const tablePrice = document.createElement("td");
-const seatName = document.getElementById("seatName");
-const seatType = document.getElementById("seatType");
-const seatPrice = document.getElementById("seatPrice");
 let tableListCount = 0;
 // console.log(seatName, seatType, seatPrice);
 let seatLeftCount = 40;
@@ -28,8 +25,8 @@ for (const key of keyboard) {
     seatLeft.innerText = seatLeftCount;
     // WORKING WITH SEAT DETAIL
     tableData.innerText = key.innerText;
-    tableType.innerText = seatType.innerText;
-    tablePrice.innerText = seatPrice.innerText;
+    tableType.innerText = "Economy";
+    tablePrice.innerText = 550;
     tableRow.appendChild(tableData);
     tableRow.appendChild(tableType);
     tableRow.appendChild(tablePrice);
