@@ -1,6 +1,7 @@
 const selectedSeat = document.getElementById("selected-seat");
 const seatLeft = document.getElementById("seats-left");
-let totalPriceElement = document.getElementById("total-price");
+const totalPriceElement = document.getElementById("total-price");
+let totalPriceValue = 0;
 let tableListCount = 0;
 // console.log(seatName, seatType, seatPrice);
 let seatLeftCount = 40;
@@ -32,6 +33,8 @@ for (const key of keyboard) {
     tableRow.appendChild(tablePrice);
     const selectedSeatinfo = document.getElementById("selected-seat-info");
     selectedSeatinfo.appendChild(tableRow);
+    totalPriceValue = totalPriceValue + 550;
+    totalPriceElement.innerText = totalPriceValue;
     // tableListCount++;
   });
 }
