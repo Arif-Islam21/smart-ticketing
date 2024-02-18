@@ -42,6 +42,7 @@ for (const key of keyboard) {
 
     // workingn with coupon
     const grandTotalPrice = document.getElementById("grand-total-price");
+    grandTotalPrice.innerText = totalPriceValue;
     document
       .getElementById("apply-coupon-code")
       .addEventListener("click", function () {
@@ -59,11 +60,16 @@ for (const key of keyboard) {
         if (selectedSeatCount === 4 && couponText15 === "new15") {
           const discount = totalPriceValue * 0.15;
           grandTotalPrice.innerText = totalPriceValue - discount;
-          console.log("I have 4 object", couponText15);
+          document
+            .getElementById("coupon-input-section")
+            .classList.add("hidden");
         } else if (selectedSeatCount === 4 && couponText20 === "couple20") {
           const discount = totalPriceValue * 0.2;
           grandTotalPrice.innerText = totalPriceValue - discount;
-          console.log("Hi I am a couple hehehe");
+          document
+            .getElementById("coupon-input-section")
+            .classList.add("hidden");
+        } else {
         }
       });
     //
