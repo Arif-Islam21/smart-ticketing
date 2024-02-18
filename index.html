@@ -186,7 +186,7 @@
               </div>
               <div class="p-4">
                 <div>
-                  <h2 class="font-bold text-4xl">NEW15</h2>
+                  <h2 class="font-bold text-4xl">Couple 20</h2>
                   <p class="text-gray-600">Coupon Code</p>
                 </div>
               </div>
@@ -609,11 +609,15 @@
                 </div>
                 <div class="bg-white rounded-lg">
                   <input
+                    id="coupon-section"
                     type="text"
                     placeholder="Have Any Coupon?"
                     class="input input-md w-full max-w-xs"
                   />
-                  <button class="btn bg-[#1DD100] my-2 text-white font-bold">
+                  <button
+                    id="apply-coupon-code"
+                    class="btn bg-[#1DD100] my-2 text-white font-bold"
+                  >
                     Apply
                   </button>
                 </div>
@@ -621,7 +625,7 @@
                   class="text-[#030712] font-bold flex my-2 justify-between p-2"
                 >
                   <h5>Grand Total</h5>
-                  <h5>1100</h5>
+                  <h5 id="grand-total-price">1100</h5>
                 </div>
               </div>
               <!-- NAME SECTION -->
@@ -631,6 +635,7 @@
                 </h2>
                 <input
                   type="text"
+                  required
                   placeholder="Enter Your Name"
                   class="input border-none input-bordered input-md w-full max-w-md"
                 />
@@ -641,7 +646,8 @@
                   Phone Number*
                 </h2>
                 <input
-                  type="text"
+                  type="number"
+                  required
                   placeholder="Enter Your Phone Number"
                   class="input border-none input-bordered input-md w-full max-w-md"
                 />

@@ -1,6 +1,5 @@
 const selectedSeat = document.getElementById("selected-seat");
 const seatLeft = document.getElementById("seats-left");
-const totalPriceElement = document.getElementById("total-price");
 let totalPriceValue = 0;
 let tableListCount = 0;
 // console.log(seatName, seatType, seatPrice);
@@ -33,9 +32,35 @@ for (const key of keyboard) {
     tableRow.appendChild(tablePrice);
     const selectedSeatinfo = document.getElementById("selected-seat-info");
     selectedSeatinfo.appendChild(tableRow);
+    // TOTAL PRICE SECTION
+    const totalPriceElement = document.getElementById("total-price");
     totalPriceValue = totalPriceValue + 550;
     totalPriceElement.innerText = totalPriceValue;
-    // tableListCount++;
+
+    // DISABLE THE KEY TO AVOID REPITATION
+    key.setAttribute("disabled", true);
+
+    // workingn with coupon
+    const grandTotalPrice = document.getElementById("grand-total-price");
+    document
+      .getElementById("apply-coupon-code")
+      .addEventListener("click", function () {
+        const couponText = document
+          .getElementById("coupon-section")
+          .value.split(" ")
+          .join("")
+          .toLowerCase();
+        // const coupon = couponText.
+        if (selectedSeatCount === 4 && couponText === "new15") {
+          const discount = totalPriceValue * 0.15;
+          grandTotalPrice.innerText = totalPriceValue - discount;
+          console.log("I have 4 object", couponText);
+        }else if(selectedSeatCount === 4 && couponText === "")
+      });
+    //
+    // if (selectedSeatCount === 4) {
+    //   console.log("seat count 4");
+    // }
   });
 }
-// console.log(kbd[0].innerText);
+// console.log(selectedSeatCount);
