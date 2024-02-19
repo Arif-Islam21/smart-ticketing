@@ -658,7 +658,8 @@
               <div class="text-start my-6 space-y-2">
                 <h2 class="font-semibold text-[#030712] text-xl">E-mail ID</h2>
                 <input
-                  type="text"
+                  id="passenger-email"
+                  type="email"
                   placeholder="Enter Your E-mail ID"
                   class="input border-none input-bordered input-md w-full max-w-md"
                 />
@@ -666,10 +667,39 @@
               <button
                 id="next-buttton"
                 disabled
+                onclick="my_modal_1.showModal()"
                 class="btn w-full bg-[#1DD100] my-2 text-white font-bold"
               >
                 Next
               </button>
+              <!-- Open the modal using ID.showModal() method -->
+              <dialog id="my_modal_1" class="modal">
+                <div class="modal-box flex flex-col items-center">
+                  <img class="" src="images/success.png" alt="" />
+                  <h3 class="font-bold text-lg">SUCCESS</h3>
+                  <p class="font-bold pt-4 text-gray-700">
+                    Thank You For Booking Our Bus Seat
+                  </p>
+                  <p class="font-bold text-gray-700">
+                    We are working hard to find the best servise and deals for
+                    you
+                  </p>
+                  <p class="py-4">
+                    Shortly You Will find a confermation with email
+                  </p>
+                  <div class="modal-action w-2/3">
+                    <form method="dialog" class="w-full">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button
+                        class="btn w-full bg-[#27AE60] text-white font-bold"
+                      >
+                        Continue
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+              <!-- MODAL CLOSE HERE -->
               <div class="flex justify-around my-4">
                 <a class="border-b-2" href="">Terms and Conditions</a>
                 <a class="border-b-2" href="">Cancellation Policy</a>

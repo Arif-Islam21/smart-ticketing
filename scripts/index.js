@@ -52,37 +52,43 @@ for (const key of keyboard) {
 
     // workingn with coupon
     const grandTotalPrice = document.getElementById("grand-total-price");
+    const couponCodeBtn = document.getElementById("apply-coupon-code");
     grandTotalPrice.innerText = totalPriceValue;
-    document
-      .getElementById("apply-coupon-code")
-      .addEventListener("click", function () {
-        const couponText15 = document
-          .getElementById("coupon-section")
-          .value.split(" ")
-          .join("")
-          .toLowerCase();
-        const couponText20 = document
-          .getElementById("coupon-section")
-          .value.split(" ")
-          .join("")
-          .toLowerCase();
 
-        if (selectedSeatCount === 4 && couponText15 === "new15") {
-          const discount = totalPriceValue * 0.15;
-          grandTotalPrice.innerText = totalPriceValue - discount;
-          document
-            .getElementById("coupon-input-section")
-            .classList.add("hidden");
-        } else if (selectedSeatCount === 4 && couponText20 === "couple20") {
-          const discount = totalPriceValue * 0.2;
-          grandTotalPrice.innerText = totalPriceValue - discount;
-          document
-            .getElementById("coupon-input-section")
-            .classList.add("hidden");
-        } else {
-          alert("PLease Enter Valid Coupon Code");
-        }
-      });
+    // const couponText2 = document
+    //   .getElementById("coupon-section")
+    //   .value.split(" ")
+    //   .join("")
+    //   .toLowerCase();
+    // document
+    //   .getElementById("coupon-section")
+    //   .addEventListener("keyup", function () {
+    //     console.log("clickig");
+    //     if (couponText2 === "new15") {
+    //       console.log("found to activate");
+    //     }
+    //   });
+
+    couponCodeBtn.addEventListener("click", function () {
+      const couponText = document
+        .getElementById("coupon-section")
+        .value.split(" ")
+        .join("")
+        .toLowerCase();
+      if (selectedSeatCount === 4 && couponText === "new15") {
+        const discount = totalPriceValue * 0.15;
+        grandTotalPrice.innerText = totalPriceValue - discount;
+        document.getElementById("coupon-input-section").classList.add("hidden");
+      } else if (selectedSeatCount === 4 && couponText === "couple20") {
+        const discount = totalPriceValue * 0.2;
+        grandTotalPrice.innerText = totalPriceValue - discount;
+        document.getElementById("coupon-input-section").classList.add("hidden");
+      } else {
+        alert("PLease Enter Valid Coupon Code");
+        // console.log("error");
+      }
+    });
+
     // WORKING WITH THE NEXT BUTTON
     const passengerName = document.getElementById("passenger-name-element");
     const passengerPhone = document.getElementById("passenger-phone-element");
@@ -98,5 +104,13 @@ for (const key of keyboard) {
         nextButton.removeAttribute("disabled", false);
       }
     }
+    // working with next button and modal
+    document
+      .getElementById("next-buttton")
+      .addEventListener("click", function () {
+        passengerName.value = "";
+        passengerPhone.value = "";
+        document.getElementById("passenger-email").value = "";
+      });
   });
 }
