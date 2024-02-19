@@ -55,19 +55,23 @@ for (const key of keyboard) {
     const couponCodeBtn = document.getElementById("apply-coupon-code");
     grandTotalPrice.innerText = totalPriceValue;
 
-    // const couponText2 = document
-    //   .getElementById("coupon-section")
-    //   .value.split(" ")
-    //   .join("")
-    //   .toLowerCase();
-    // document
-    //   .getElementById("coupon-section")
-    //   .addEventListener("keyup", function () {
-    //     console.log("clickig");
-    //     if (couponText2 === "new15") {
-    //       console.log("found to activate");
-    //     }
-    //   });
+    // console.log(document.getElementById("coupon-section").innerText);
+    document
+      .getElementById("coupon-section")
+      .addEventListener("keyup", function () {
+        const couponText2 = document
+          .getElementById("coupon-section")
+          .value.split(" ")
+          .join("")
+          .toLowerCase();
+        if (selectedSeatCount === 4) {
+          if (couponText2 === "new15" || couponText2 === "couple20") {
+            couponCodeBtn.removeAttribute("disabled", false);
+          }
+        } else if (selectedSeatCount !== 4) {
+          couponCodeBtn.setAttribute("disabled", true);
+        }
+      });
 
     couponCodeBtn.addEventListener("click", function () {
       const couponText = document
