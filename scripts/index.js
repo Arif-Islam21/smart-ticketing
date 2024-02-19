@@ -69,8 +69,28 @@ for (const key of keyboard) {
             .getElementById("coupon-input-section")
             .classList.add("hidden");
         } else {
+          alert("PLease Enter Valid Coupon Code");
         }
       });
   });
 }
 // console.log(selectedSeatCount);
+
+// document.getElementById("next-buttton").addEventListener("click", function () {
+//   // console.log(passengerNameElement);
+// });
+
+const passengerName = document.getElementById("passenger-name-element");
+const nextButton = document.getElementById("next-buttton");
+passengerName.addEventListener("keyup", function () {
+  const name = passengerName.value;
+  if (name.length === 0) {
+    nextButton.setAttribute("disabled", true);
+    console.log("Hi I am disabled");
+  } else if (name.length >= 1) {
+    nextButton.setAttribute("disabled", false);
+    console.log("HI I am enabled", name.length);
+  }
+  console.log(name);
+});
+// console.log(passengerName);
