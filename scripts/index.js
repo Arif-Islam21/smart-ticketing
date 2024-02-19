@@ -81,16 +81,17 @@ for (const key of keyboard) {
 // });
 
 const passengerName = document.getElementById("passenger-name-element");
+const passengerPhone = document.getElementById("passenger-phone-element");
 const nextButton = document.getElementById("next-buttton");
-passengerName.addEventListener("keyup", function () {
-  const name = passengerName.value;
-  if (name.length === 0) {
+passengerPhone.addEventListener("keyup", passengerInfo);
+passengerName.addEventListener("keyup", passengerInfo);
+function passengerInfo() {
+  const name = passengerName.value.length;
+  const phone = passengerPhone.value.length;
+  if (name === 0 && phone === 0) {
     nextButton.setAttribute("disabled", true);
-    console.log("Hi I am disabled");
-  } else if (name.length >= 1) {
-    nextButton.setAttribute("disabled", false);
-    console.log("HI I am enabled", name.length);
+  } else if (name >= 1 && phone >= 1) {
+    nextButton.removeAttribute("disabled", false);
   }
-  console.log(name);
-});
+}
 // console.log(passengerName);
