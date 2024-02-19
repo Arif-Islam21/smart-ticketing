@@ -41,7 +41,6 @@ for (const key of keyboard) {
 
     // DISABLE THE KEY TO AVOID REPITATION
     key.setAttribute("disabled", true);
-    console.log("I am clicked from index");
 
     // DISABLE ALL KEY WHEN 4 SEAT BOOKED
     const keybrd = document.querySelectorAll("kbd");
@@ -97,9 +96,20 @@ for (const key of keyboard) {
         document.getElementById("coupon-input-section").classList.add("hidden");
       } else {
         alert("PLease Enter Valid Coupon Code");
-        // console.log("error");
       }
-      console.log(discount);
+      // MAKING DISCOUNT DIV
+      const discountTitle = "Discount";
+      const discountPrice = discount;
+      const discountDiv = document.getElementById("discount-div");
+      const priceDiv = document.getElementById("price-div");
+      const h4 = document.createElement("h4");
+      const h5 = document.createElement("h5");
+      h4.innerText = discountTitle;
+      h5.innerText = discountPrice;
+      priceDiv.appendChild(h4);
+      priceDiv.appendChild(h5);
+      discountDiv.appendChild(priceDiv);
+      console.log(discountDiv);
     });
 
     // WORKING WITH THE NEXT BUTTON
