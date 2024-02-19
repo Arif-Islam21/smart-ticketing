@@ -41,9 +41,9 @@ for (const key of keyboard) {
 
     // DISABLE THE KEY TO AVOID REPITATION
     key.setAttribute("disabled", true);
+    console.log("I am clicked from index");
 
     // DISABLE ALL KEY WHEN 4 SEAT BOOKED
-    console.log(selectedSeatCount);
     const keybrd = document.querySelectorAll("kbd");
     if (selectedSeatCount > 4) {
       alert("You can't select more then 4 ticket");
@@ -54,6 +54,7 @@ for (const key of keyboard) {
       selectedSeat.innerText = selectedSeatCount;
       seatLeft.innerText = seatLeftCount;
       selectedSeatinfo.removeChild(tableRow);
+      totalPriceValue = totalPriceValue - 550;
     }
 
     // workingn with coupon
@@ -80,23 +81,25 @@ for (const key of keyboard) {
       });
 
     couponCodeBtn.addEventListener("click", function () {
+      let discount = 1;
       const couponText = document
         .getElementById("coupon-section")
         .value.split(" ")
         .join("")
         .toLowerCase();
       if (selectedSeatCount === 4 && couponText === "new15") {
-        const discount = totalPriceValue * 0.15;
+        discount = totalPriceValue * 0.15;
         grandTotalPrice.innerText = totalPriceValue - discount;
         document.getElementById("coupon-input-section").classList.add("hidden");
       } else if (selectedSeatCount === 4 && couponText === "couple20") {
-        const discount = totalPriceValue * 0.2;
+        discount = totalPriceValue * 0.2;
         grandTotalPrice.innerText = totalPriceValue - discount;
         document.getElementById("coupon-input-section").classList.add("hidden");
       } else {
         alert("PLease Enter Valid Coupon Code");
         // console.log("error");
       }
+      console.log(discount);
     });
 
     // WORKING WITH THE NEXT BUTTON
