@@ -13,7 +13,6 @@ for (const key of keyboard) {
     const keyStyle = key.style;
     keyStyle.backgroundColor = "#1DD100";
     keyStyle.color = "white";
-    keyStyle.border = "none";
 
     // INCREASING AND DECREASIGN SEAT COUNT
     selectedSeatCount += 1;
@@ -44,11 +43,18 @@ for (const key of keyboard) {
     key.setAttribute("disabled", true);
 
     // DISABLE ALL KEY WHEN 4 SEAT BOOKED
-    // console.log(selectedSeatCount);
-    // const keybrd = document.querySelectorAll("kbd");
-    // if (selectedSeatCount > 4) {
-    //   // key.setAttribute("disabled", true);
-    // }
+    console.log(selectedSeatCount);
+    const keybrd = document.querySelectorAll("kbd");
+    if (selectedSeatCount > 4) {
+      alert("You can't select more then 4 ticket");
+      key.style.backgroundColor = "#f3f4f6";
+      key.style.color = "grey";
+      selectedSeatCount = selectedSeatCount - 1;
+      seatLeftCount = seatLeftCount + 1;
+      selectedSeat.innerText = selectedSeatCount;
+      seatLeft.innerText = seatLeftCount;
+      selectedSeatinfo.removeChild(tableRow);
+    }
 
     // workingn with coupon
     const grandTotalPrice = document.getElementById("grand-total-price");
